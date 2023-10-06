@@ -7,8 +7,9 @@
  *
  * Description: This program displays a random number
  * and indicate if it positive, negative, or zero
+ * Return: return o for success, 1 for error
  */
- int main(void)
+int main(void)
 {
 	int n;
 
