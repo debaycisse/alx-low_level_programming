@@ -2,12 +2,12 @@
 
 /**
  * main - this is the entry to this program
- * 
+ *
  * Description: this program prints a to z,
  * both in lower and upper case.
  * Return: it returns zero if it successful, otherwise, it return 1
  */
-int main (void)
+int main(void)
 {
 	char alphabet_lower = 'a';
 	char alphabet_upper = 'A';
