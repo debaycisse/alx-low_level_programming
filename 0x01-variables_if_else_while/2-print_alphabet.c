@@ -6,7 +6,7 @@
  * Description: it prints alphabet letters from a to z in lowercase
  * Return: it returns 0, if the program runs successfuly
  */
- int main(void)
+int main(void)
 {
 	char alphabet_letter = 'a';
 
