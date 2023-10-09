@@ -12,7 +12,7 @@
  */
 int main(void)
 {
-	char *sentence = "and that piece of art is useful\" -\
+	char *sentence = "and that piece of art is useful\" - \
 Dora Korpar, 2015-10-19\n";
 	int sentence_length = strlen(sentence);
 
