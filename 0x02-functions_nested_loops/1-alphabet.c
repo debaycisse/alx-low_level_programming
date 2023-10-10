@@ -9,6 +9,7 @@
 void print_alphabet(void)
 {
 	int alph_letter = 97;
+
 	while (alph_letter <= 122)
 	{
 		_putchar((char) alph_letter);
