@@ -18,23 +18,20 @@ int main(void)
 	int digit2;
 	int digit3;
 	int i;
-	int j;
-
 
 	while (digit1 <= 55)
 	{
 		digit2 = 49;
-		i = digit2;
-		digit3 = 50;
-		while (i <= 57)
+		while (digit2 <= 57)
 		{
-			j = digit3;
-			while (j <= 57)
+			digit3 = 50;
+			i = digit3;
+			while (i <= 57)
 			{
 				putchar((char) digit1);
+				putchar((char) digit2);
 				putchar((char) i);
-				putchar((char) j);
-				if (digit1 == 55 && i == 56 && j == 57)
+				if (digit1 == 55 && digit2 == 56 && i == 57)
 				{
 					putchar('\n');
 				}
@@ -43,12 +40,11 @@ int main(void)
 					putchar((char) 44);
 					putchar((char) 32);
 				}
-				j++;
+				i++;
 			}
 			digit3++;
-			i++;
+			digit2++;
 		}
-		digit2++;
 		digit1++;
 	}
 	return (0);
