@@ -14,32 +14,42 @@
  */
 int main(void)
 {
-	int digit1;
-	int digit2 = 48;
-	int digit3 = 49;
+	int digit1 = 48;
+	int digit2;
+	int digit3;
 	int i;
 	int j;
 
-	for (digit1 = 48; digit1 <= 57; digit1++)
+
+	while (digit1 <= 57)
 	{
-		digit2++;
-		for (i = digit2; i <= 57; i++)
+		digit2 = 49;
+		i = digit2;
+		digit3 = 50;
+		while (i <= 57)
 		{
-			digit3++;
-			for (j = digit3; j <= 57; j++)
+			j = digit3;
+			while (j <= 57)
 			{
 				putchar((char) digit1);
 				putchar((char) i);
 				putchar((char) j);
-				if (!(digit1 == 55) && !(digit2 == 56) && !(digit3 == 57))
+				if (digit1 == 57 && i == 56)
+				{
+					putchar('\n');
+				}
+				else
 				{
 					putchar((char) 44);
 					putchar((char) 32);
 				}
-				else
-					putchar('\n');
+				j++;
 			}
+			digit3++;
+			i++;
 		}
+		digit2++;
+		digit1++;
 	}
 	return (0);
 }
