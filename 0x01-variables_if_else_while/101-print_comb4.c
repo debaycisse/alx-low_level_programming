@@ -21,7 +21,7 @@ int main(void)
 	int j;
 
 
-	while (digit1 <= 57)
+	while (digit1 <= 55)
 	{
 		digit2 = 49;
 		i = digit2;
@@ -34,7 +34,7 @@ int main(void)
 				putchar((char) digit1);
 				putchar((char) i);
 				putchar((char) j);
-				if (digit1 == 57 && i == 56)
+				if (digit1 == 55 && i == 56 && j == 57)
 				{
 					putchar('\n');
 				}
