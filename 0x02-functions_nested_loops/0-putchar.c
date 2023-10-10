@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - entry point to the program
+ * @void: it is not taking any parameter
+ *
+ * Description: prints "_putchar" to the stdout
+ * Return: 1, if successfuly run.
+ */
 int main(void)
 {
 	_putchar('_');
