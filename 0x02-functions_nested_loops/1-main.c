@@ -1,21 +1,12 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints a to z
- * @void: no parameter
+ * main - check the code for Holberton School students.
  *
- * Description: prints from a to z
- * Return: no return
+ * Return: Always 0.
  */
-void print_alphabet(void)
+int main(void)
 {
-	int alph_letter = 97;
-	while (alph_letter <= 122)
-	{
-		_putchar((char) alph_letter);
-		if (alph_letter == 122)
-			_putchar('\n');
-		alph_letter++;
-
-	}
+	print_alphabet();
+	return (0);
 }

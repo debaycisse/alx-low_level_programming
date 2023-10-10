@@ -1,15 +1,20 @@
 #include "main.h"
-
 /**
- * main - entry to the main program
+ * print_alphabet - prints a to z
  * @void: no parameter
  *
- * Description: prints a to z in lowercase using a
- * given library, _putcha
- * Return: 0 for success, 1 for error
+ * Description: prints from a to z
+ * Return: no return
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int alph_letter = 97;
+	while (alph_letter <= 122)
+	{
+		_putchar((char) alph_letter);
+		if (alph_letter == 122)
+			_putchar('\n');
+		alph_letter++;
+
+	}
 }
