@@ -11,11 +11,11 @@
  */
 int _isupper(int c)
 {
-	int return_value;
+	int ret_v;
 
 	if (isupper(c))
-		return_value = 1;
+		ret_v = 1;
 	else
-		return_value = 0;
-	return (return_value);
+		ret_v = 0;
+	return (ret_v);
 }
