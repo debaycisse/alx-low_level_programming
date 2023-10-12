@@ -1,5 +1,4 @@
 #include <ctype.h>
-#include "main.h"
 
 /**
  * _isupper - prints a given character and 1 if it is an uppercase
