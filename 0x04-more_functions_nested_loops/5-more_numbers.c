@@ -37,12 +37,10 @@ void more_numbers(void)
 				_putchar('0' + np1);
 			}
 
-			if (m_than_9 % 10 == 4)
-				_putchar('\n');
 			j++;
 			num++;
 		}
-
+		_putchar('\n');
 		i++;
 	}
 }
