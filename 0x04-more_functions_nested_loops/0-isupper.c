@@ -12,7 +12,7 @@ int _isupper(int c)
 {
 	int ret_v;
 
-	if (isupper(c))
+	if (isupper((char) + c))
 		ret_v = 1;
 	else
 		ret_v = 0;
