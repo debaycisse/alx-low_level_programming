@@ -31,10 +31,10 @@ void more_numbers(void)
 			{
 				m_than_9++;
 				np1 = m_than_9 % 10;
-				np2 = m_than_9 /10;
+				np2 = m_than_9 / 10;
 				/*_putchar('0' + np1 + np2);*/
-				_putchar('0' +np2);
-				_putchar('0' +np1);
+				_putchar('0' + np2);
+				_putchar('0' + np1);
 			}
 
 			if (m_than_9 % 10 == 4)
@@ -43,6 +43,6 @@ void more_numbers(void)
 			num++;
 		}
 
-		i++; 
+		i++;
 	}
 }
