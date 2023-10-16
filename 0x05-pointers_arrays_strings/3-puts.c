@@ -12,7 +12,7 @@ void _puts(char *s)
 	int i;
 	int len = (int) strlen(s);
 
-	for(i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		_putchar(s[i]);
 	}
