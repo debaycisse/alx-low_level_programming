@@ -1,18 +1,23 @@
-/*
-Write a function that prints n elements of an array of integers, followed by a new line.
-
-Prototype: void print_array(int *a, int n);
-where n is the number of elements of the array to be printed
-Numbers must be separated by comma, followed by a space
-The numbers should be displayed in the same order as they are stored in the array
-You are allowed to use printf
-
- */
+#include "main.h"
+#include <stdio.h>
 
 /**
  * print_array - prints an array
  * @a: pointer to the memory location of the array
  * @n: the size of the given array
  *
- * Description: prints array of number, seperated by comma, followed by
- * spacejhghghgh
+ * Description: prints array of number, seperated by comma, and followed by
+ * space.
+ */
+void print_array(int *a, int n)
+{
+	int i;
+	
+	for (i = 0; i < n; i++)
+	{
+		if (i+1 != n)
+			printf("%d, ", a[i]);
+		else
+			printf("%d\n", a[i]);
+	}
+}
