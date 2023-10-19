@@ -20,12 +20,13 @@ char *_strncpy(char *dest, char *src, int n)
 			dest[i] = src[i];
 			i++;
 		}
-		/*else
+		else
 		{
 			dest[i] = '\0';
 			i++;
-		}*/
+		}
 	}
-	dest[++i] = '\0';
+	if (dest[i] != '\0')
+		dest[i] = '\0';
 	return (dest);
 }
