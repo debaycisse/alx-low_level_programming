@@ -19,9 +19,9 @@ char *string_toupper(char *characters)
 		characters_cpy++;
 		len++;
 	}
-	
+
 	characters_cpy = characters;
-	
+
 	while (len > 0)
 	{
 		letter = (char) toupper((int) *characters_cpy);
