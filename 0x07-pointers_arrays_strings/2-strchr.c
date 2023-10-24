@@ -21,7 +21,6 @@ char *_strchr(char *s, char c)
 		len++;
 		i++;
 	}
-
 	i = 0;
 	while (i < len)
 	{
@@ -34,4 +33,3 @@ char *_strchr(char *s, char c)
 	}
 	return (result);
 }
-
