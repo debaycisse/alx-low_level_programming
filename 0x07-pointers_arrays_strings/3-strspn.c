@@ -18,39 +18,21 @@ unsigned int _strspn(char *s, char *accept)
 	char *accept_cpy = NULL;
 	unsigned int length = 0;
 	int a;
+	int counter;
 
 	i = 0;
 	while (*(s + i) != '\0')
 	{
 		if (*(s + i) == 32)
 		{
-			from++;
-			for (a = from; a < i; a++)
-			{
-				j = 0;
-				while (*(accept + j) != '\0')
-				{
-					if (*(accept + j) == *(s + (a - 1)))
-					{
-						*(accept_cpy + j) = *(accept + j);
-						j++;
-					}
-					else
-						j++;
-				}
+			from = (j - 1) i;
 
-				if (sizeof(accept) == sizeof(accept_cpy))
-				{
-					length = (unsigned int) i - from;
-					break;
-				}
-				from++;
-			}
 		}
 
 		if (length > (unsigned int) 0)
 			break;
 
+		j++;
 		i++;
 	}
 
