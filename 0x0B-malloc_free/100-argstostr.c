@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		i++;
 	}
 	sum++;
-	new_av = malloc(sum * sizeof(char));
+	new_av = malloc(sum * sizeof(*new_av));
 	if (new_av == NULL)
 		return (NULL);
 	p_location = 0;
