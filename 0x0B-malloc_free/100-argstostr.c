@@ -1,21 +1,29 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 char *argstostr(int ac, char **av)
 {
-	char **new_av;
+	char *new_av;
 	int i;
 	int j;
 	int k;
+	int sum;
 
-	if (ac == 0 or av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	new_av = malloc(ac * sizeof(*new_av));
-	if (new_av == NULL)
-		return (NULL);
-	i = 0;
+	sum = 0;
+	i = 1;
 	while (i < ac)
 	{
-		if (av[0][i] == '\0')
+		sum += strlen(av[i]) + 1;
 		i++;
 	}
+	sum++;
+	new_av = malloc(sum * sizeof(char));
+	i = 1;
+	while (i < ac)
+	{
+		strcat(new_av[i],av[i])
+	}
+	return (new_av);
 }
