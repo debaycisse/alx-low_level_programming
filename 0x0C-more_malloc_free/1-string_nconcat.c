@@ -10,7 +10,6 @@
  * Return: the new pointer that contains the string if no error
  * else, NULL.
 */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
@@ -29,23 +28,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		length = s1_len + s2_len + 1;
 	else
 		length = s1_len + n + 1;
-
 	s3 = malloc(length * sizeof(*s3));
-	s4 = s3 + s1_len * sizeof(char);
+	(void) s4;
 	if (s3 != NULL)
 	{
 		strcpy(s3, s1);
+		s4 = s3 + s1_len * sizeof(char);
 		if (s2_len <= n)
 		{
 			strcpy(s4, s2);
-			s2_len++;
-			s4[s2_len] = '\0';
+			s4[s2_len + 1] = '\0';
 		}
 		if (s2_len > n)
 		{
 			strncpy(s4, s2, n);
-			n++;
-			s4[n] = '\0';
+			s4[n + 1] = '\0';
 		}
 		return (s3);
 	}
