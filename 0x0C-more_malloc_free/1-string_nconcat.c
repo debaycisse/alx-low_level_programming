@@ -1,22 +1,23 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*
-   Write a function that concatenates two strings.
 
-Prototype: char *string_nconcat(char *s1, char *s2, unsigned int n);
-The returned pointer shall point to a newly allocated space in memory, which contains s1, followed by the first n bytes of s2, and null terminated
-If the function fails, it should return NULL
-If n is greater or equal to the length of s2 then use the entire string s2
-if NULL is passed, treat it as an empty string
+/**
+ * string_nconcat - concatenates two strings together
+ * @s1: the pointer to the first string
+ * @s2: the pointer to the second string
+ * @n: number of string to copy if length of s2 is greater than n
+ *
+ * Return: the new pointer that contains the string if no error
+ * else, NULL.
 */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
+	char *s4;
 	unsigned int length = 0;
-	int s1_len;
-	int s2_len;
+	unsigned int s1_len;
+	unsigned int s2_len;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -24,29 +25,27 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	s1_len = strlen(s1);
 	s2_len = strlen(s2);
-	(void) s2_len;
-	length = s1_len + 1 + n;
+	if (s2_len <= n)
+		length = s1_len + s2_len + 1;
+	else
+		length = s1_len + n + 1;
 
 	s3 = malloc(length * sizeof(*s3));
+	s4 = s3 + s1_len * sizeof(char);
 	if (s3 != NULL)
 	{
 		strcpy(s3, s1);
-		length = strlen(s1) + 1;
-		s3 = s3 + (int)length;
-		printf("memory location after: %p", s3);
-		length = strlen(s2);
-		if (length <= n)
+		if (s2_len <= n)
 		{
-			strcpy(s3, s2);
-			length++;
-			s3[length] = '\0';
+			strcpy(s4, s2);
+			s2_len++;
+			s4[s2_len] = '\0';
 		}
-		if (length > n)
+		if (s2_len > n)
 		{
-			strncpy(s3, s2, n);
-
+			strncpy(s4, s2, n);
 			n++;
-			s3[n] = '\0';
+			s4[n] = '\0';
 		}
 		return (s3);
 	}
