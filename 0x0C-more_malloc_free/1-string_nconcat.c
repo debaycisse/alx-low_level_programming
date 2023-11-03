@@ -29,17 +29,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else
 		length = s1_len + n + 1;
 	s3 = malloc(length * sizeof(*s3));
-	(void) s4;
 	if (s3 != NULL)
 	{
 		strcpy(s3, s1);
 		s4 = s3 + s1_len * sizeof(char);
-		if (s2_len <= n)
+		if (n >= s2_len)
 		{
 			strcpy(s4, s2);
 			s4[s2_len + 1] = '\0';
 		}
-		if (s2_len > n)
+		if (n < s2_len)
 		{
 			strncpy(s4, s2, n);
 			s4[n + 1] = '\0';
