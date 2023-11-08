@@ -9,7 +9,8 @@
 int int_index(int *array, int size, int (*cmp) (int))
 {
 	int i;
-	int matched_index;
+	int matched_index = 0;
+	int flag;
 
 	if (size <= 0)
 		return (-1);
@@ -18,10 +19,12 @@ int int_index(int *array, int size, int (*cmp) (int))
 		if (cmp(array[i]) == 1)
 		{
 			matched_index = i;
+			flag = 1;
 			break;
 		}
 	}
-	if (matched_index >= 0)
+	if (flag == 1)
 		return (matched_index);
-	return (-1);
+	else
+		return (-1);
 }
