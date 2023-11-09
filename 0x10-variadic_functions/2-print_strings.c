@@ -19,9 +19,26 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list all_strings;
 
+	va_start(all_strings, n);
 	for (i = 0; i < n; i++)
 	{
-		
+		if ((i + 1 == n)
+			printf("%s", \
+					(va_arg(all_strings, char *) == NULL ? \
+					 "(nil)" : \
+					 va_arg(all_strings, char *)));
+
+		if (separator == NULL)
+			printf("%s", \
+					(va_arg(all_strings, char *) == NULL ? \
+					 "(nil)" : \
+					 va_arg(all_strings, char *)));
+		else
+			printf("%s%s", \
+					(va_arg(all_strings, char *) == NULL? \
+					 "(nil)" : \
+					 va_arg(all_strings, char *)), \
+					 separator);
 	}
 	va_end(all_strings);
 	printf("\n");
