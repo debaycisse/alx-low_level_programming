@@ -1,14 +1,8 @@
-/*
-   This file should contain the 5 following functions (not more):
-
-op_add: returns the sum of a and b. Prototype: int op_add(int a, int b);
-op_sub: returns the difference of a and b. Prototype: int op_sub(int a, int b);
-op_mul: returns the product of a and b. Prototype: int op_mul(int a, int b);
-op_div: returns the result of the division of a by b. Prototype: int op_div(int a, int b);
-op_mod: returns the remainder of the division of a by b. Prototype: int op_mod(int a, int b);
-*/
 /**
- *
+ * op_add - adds and returns two integers
+ * @a: first integer
+ * @b: second integer
+ * Return: the result of operation
 */
 int op_add(int a, int b)
 {
@@ -16,7 +10,10 @@ int op_add(int a, int b)
 }
 
 /**
- *
+ * op_sub - subtract one integer from another integer
+ * @a: first integer
+ * @b: second integer
+ * Return: the result of the operation
 */
 int op_sub(int a, int b)
 {
@@ -24,7 +21,10 @@ int op_sub(int a, int b)
 }
 
 /**
- *
+ * op_mul - multiplies two integers
+ * @a: first integer
+ * @b: second integer
+ * Return: the result of the operation
 */
 int op_mul(int a, int b)
 {
@@ -32,7 +32,10 @@ int op_mul(int a, int b)
 }
 
 /**
- *
+ * op_div - divides two integers by one another
+ * @a: first integer
+ * @b: second integer
+ * Return: the result of the operation
 */
 int op_div(int a, int b)
 {
@@ -40,7 +43,10 @@ int op_div(int a, int b)
 }
 
 /**
- *
+ * op_mod - calculates the reminder two integers divided by one another
+ * @a: first integer
+ * @b: second integer
+ * Return: the result of the operation
 */
 int op_mod(int a, int b)
 {
