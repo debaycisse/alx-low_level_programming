@@ -1,38 +1,50 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * insert_nodeint_at_index - inserts a new node at an index position
+ * @head: pointer to the address of head node
+ * @idx: the index postion's value
+ * @n: the new node's data
+ * Return: pointer to the new node or NULL, if error occurs
+ */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	listint_t *new;
 	listint_t *head_cpy;
 
-	head_cpy = *head;
 	new = NULL;
-	i = 0;
-	while (head_cpy != NULL)
+	if ((idx == 0) && *head == NULL)
 	{
-		if (idx == i)
+		new = malloc(sizeof(listint_t));
+		if (new == NULL)
+			return (NULL);
+		new->n = n;
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
+	if ((*head == NULL) && (idx != i))
+		return (NULL);
+	if (*head != NULL)
+	{
+		head_cpy = *head;
+		i = 0;
+		while (head_cpy != NULL)
 		{
-			new = malloc(sizeof(listint_t));
-			if (new == NULL)
-				return (NULL);
-			printf("\n address of new is %p\n", (void *)new);
-			new->n = n;
-			new->next = head_cpy;
-			printf("\nmalloc was created successfully\n");
-			printf("\nnew->n = %d | new->next = %p | head_cpy = %p\n", new->n, (void *)new->next, (void *)head_cpy);
-			head_cpy = new;
-			printf("\n after assigning head_cpy to new->next | head_cpy = %p\n", (void *)new);
-			return (new);
-		}
-		else
-		{
+			if (idx == i + 1)
+			{
+				new = malloc(sizeof(listint_t));
+				if (new == NULL)
+					return (NULL);
+				new->n = n;
+				new->next = head_cpy->next;
+				head_cpy->next = new;
+				return (new);
+			}
 			i++;
-			printf("\nBefore moving to next node, head_cpy = %p\n", (void *)head_cpy);
 			head_cpy = head_cpy->next;
-			printf("\nAfter moving to next node, head_cpy = %p\n", (void *)head_cpy);
 		}
 	}
 	if (new == NULL)
