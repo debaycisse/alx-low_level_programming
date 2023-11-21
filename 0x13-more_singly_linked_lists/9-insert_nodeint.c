@@ -25,14 +25,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			printf("\nnew->n = %d | new->next = %p | head_cpy = %p\n", new->n, (void *)new->next, (void *)head_cpy);
 			head_cpy = new;
 			printf("\n after assigning head_cpy to new->next | head_cpy = %p\n", (void *)new);
-			return (new);
+			i++;
+			head_cpy = head_cpy->next;
 		}
-		else
+		else if (idx != i)
 		{
 			i++;
-			printf("\nBefore moving to next node, head_cpy = %p\n", (void *)head_cpy);
 			head_cpy = head_cpy->next;
-			printf("\nAfter moving to next node, head_cpy = %p\n", (void *)head_cpy);
 		}
 	}
 	if (new == NULL)
