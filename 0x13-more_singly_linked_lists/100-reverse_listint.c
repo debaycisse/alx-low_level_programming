@@ -12,18 +12,29 @@ You can only declare a maximum of two variables in your function
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *next_node;
-	listint_t *current_node;
+	listint_t *previous_node;
 
-	current_node = *head;
-	next_node = current_node->next;
-	current_node->next = NULL;
+	previous_node = *head;
+	next_node = previous_node->next;
+	previous_node->next = NULL;
 	*head = next_node;
-	while (next_node != NULL)
+	while (*head != NULL)
 	{
-		current_node = *head;
-		next_node = current_node->next;
-		current_node->next = *head;
-		*head = next_node;
+		*head = next_node->next;
+		if (*head == NULL)
+		{
+			*head = next;
+			next_node->next = previous_node;
+			previous_node = next_node;
+			next_node = *head;
+			break;
+		}
+		else
+		{
+			next_node->next = previous_node;
+			previous_node = next_node;
+			next_node = *head;
+		}
 	}
 	return (*head);
 }
