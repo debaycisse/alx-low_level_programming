@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 #include <stdio.h>
->>>>>>> a3cb92e7e8e4323f7bf2211c08463f8a042fb7c8
 #include "main.h"
 
 void print_binary(unsigned long int n)
