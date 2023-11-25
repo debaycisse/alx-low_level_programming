@@ -12,7 +12,7 @@ int get_endianness(void)
 	int num_s = sizeof(num);
 
 	if ((num_s & 1) == 1)
-		return (1);
-	else
 		return (0);
+	else
+		return (1);
 }
