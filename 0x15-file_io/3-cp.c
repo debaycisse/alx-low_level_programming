@@ -30,8 +30,9 @@ int main(int argc, char **argv)
 	fd_from = open(file_from, O_RDONLY);
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-
-
+	/*
+	int fds[2] = open_file(argv);
+*/
 
 	ch_read = read(fd_from, buffer, 1024);
 	if ((strlen(file_from) == 0) || (ch_read < 0))
