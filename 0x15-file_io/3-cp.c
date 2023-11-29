@@ -8,6 +8,12 @@
 #include <string.h>
 #include "main.h"
 
+/**
+ * main - entry to the program
+ * @argc: the number of all arguments, passed
+ * @argv: the array of each passed argument
+ * Return: 0, if no error, otherwise 1.
+ */
 int main(int argc, char **argv)
 {
 	char *file_from;
@@ -29,11 +35,6 @@ int main(int argc, char **argv)
 	file_to = argv[2];
 	fd_from = open(file_from, O_RDONLY);
 	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-
-	/*
-	int fds[2] = open_file(argv);
-*/
-
 	ch_read = read(fd_from, buffer, 1024);
 	if ((strlen(file_from) == 0) || (ch_read < 0))
 	{
@@ -42,13 +43,11 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	ch_wrote = write(fd_to, buffer, ch_read);
-	if((fd_to < 0) || (ch_wrote < 0))
+	if ((fd_to < 0) || (ch_wrote < 0))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-
-
 	close_f_from = close(fd_from);
 	close_f_to = close(fd_to);
 	if (close_f_from < 0)
