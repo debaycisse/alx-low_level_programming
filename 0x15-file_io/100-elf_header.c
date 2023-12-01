@@ -10,6 +10,14 @@
 #include <stddef.h>
 #include "main.h"
 
+/**
+ * main - entry point to the program
+ * @argc: stores the number of passed parameter
+ * @argv: array of both program's name and the passed elf file
+ *
+ * Description: prints the header of a given elf file
+ * Return: 0, if no error, else a value greater than 0 is returned
+ */
 int main(int argc, char **argv)
 {
 	int fd;
@@ -53,7 +61,8 @@ int main(int argc, char **argv)
 		elf_hdr = (Elf64_Ehdr *) elf_m;
 		printf("ELF Header:\n");
 		printf("  Magic:   ");
-		for (i = 0; i < EI_NIDENT; i++) {
+		for (i = 0; i < EI_NIDENT; i++)
+		{
 			printf("%02x ", elf_hdr->e_ident[i]);
 		}
 		printf("\n");
@@ -73,5 +82,5 @@ int main(int argc, char **argv)
 		close(fd);
 		exit(98);
 	}
-	return(0);
+	return (0);
 }
