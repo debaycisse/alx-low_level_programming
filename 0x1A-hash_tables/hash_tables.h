@@ -53,4 +53,7 @@ int update_value(const char *k, const char *v,
 int collision(unsigned long int nn_id, hash_table_t *ht,
 			  const char *k, const char *v);
 
+/* 4-hash_table_get.c */
+char *hash_table_get(const hash_table_t *ht, const char *key);
+
 #endif
