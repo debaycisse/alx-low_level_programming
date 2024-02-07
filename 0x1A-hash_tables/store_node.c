@@ -9,6 +9,8 @@
  */
 int store_node(hash_table_t *ht, hash_node_t *n_n, unsigned long int n_n_id)
 {
+	hash_node_t *current_node = ht->array[n_n_id];
+
 	if (ht->array[n_n_id] == NULL)
 	{
 		ht->array[n_n_id] = (hash_node_t *)n_n;
@@ -16,8 +18,7 @@ int store_node(hash_table_t *ht, hash_node_t *n_n, unsigned long int n_n_id)
 	}
 	else if (ht->array[n_n_id] != NULL)
 	{
-		hash_node_t *current_node = ht->array[n_n_id];
-		while(current_node != NULL)
+		while (current_node != NULL)
 			current_node = current_node->next;
 		current_node->next = (struct hash_node_s *)n_n;
 		return (1);

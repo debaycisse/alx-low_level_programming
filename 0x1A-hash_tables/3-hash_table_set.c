@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node = NULL;
 	unsigned long int new_node_index = 0;
 	int compare = 0;
-	
+
 	new_node_index = key_index(key, ht->size);
 	compare = strcmp(ht->array[new_node_index]->key, key);
 	if ((ht->array[new_node_index]) && (compare == 0))
@@ -58,7 +58,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
-	return(node);
+	return (node);
 }
 
 
@@ -105,6 +105,7 @@ int collision(unsigned long int nn_id, hash_table_t *ht,
 	      const char *k, const char *v)
 {
 	hash_node_t *new_node = create_hash_node(k, v);
+
 	if (new_node == NULL)
 		return (0);
 	new_node.next = ht->array[nn_id];
