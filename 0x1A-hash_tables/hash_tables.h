@@ -46,5 +46,10 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 hash_node_t *create_hash_node(const char *key, const char *value);
 void safe_free(char *data);
+int update_value(const char *k, const char *v, hash_table_t *ht, unsigned long int i);
+int collision(unsigned long int nn_id, hash_table_t *ht, const char *k, const char *v);
+
+/* store_node.c */
+int store_node(hash_table_t *ht, hash_node_t *n_n, unsigned long int n_n_id);
 
 #endif
