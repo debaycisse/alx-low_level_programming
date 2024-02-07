@@ -56,4 +56,7 @@ int collision(unsigned long int nn_id, hash_table_t *ht,
 /* 4-hash_table_get.c */
 char *hash_table_get(const hash_table_t *ht, const char *key);
 
+/* 5-hash_table_print.c */
+void hash_table_print(const hash_table_t *ht);
+
 #endif
