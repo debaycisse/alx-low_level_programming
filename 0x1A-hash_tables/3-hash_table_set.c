@@ -13,12 +13,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int new_node_index = 0;
 	int compare = 0;
 
-	new_node_index = key_index(key, ht->size);
-	compare = strcmp(ht->array[new_node_index]->key, key);
-	if ((ht->array[new_node_index]) && (compare == 0))
-		return (update_value(key, value, ht, new_node_index));
-	else if ((ht->array[new_node_index]) && (compare != 0))
-		return (collision(new_node_index, ht, key, value));
+	new_node_index = key_index((const unsigned char *)key, ht->size);
+	if (ht->array[new_node_index] != NULL)
+	{
+		compare = strcmp(ht->array[new_node_index]->key, key);
+		if ((ht->array[new_node_index]) && (compare == 0))
+			return (update_value(key, value, ht, new_node_index));
+		else if ((ht->array[new_node_index]) && (compare != 0))
+			return (collision(new_node_index, ht, key, value));
+	}
 	new_node = create_hash_node(key, value);
 	if (new_node == NULL)
 		return (0);
@@ -66,7 +69,7 @@ hash_node_t *create_hash_node(const char *key, const char *value)
  * safe_free - freely (without an error) frees a used space
  * @data: the data to be freed
  */
-void safe_free(char *data)
+void safe_free(hash_node_t *data)
 {
 	if (data)
 		free(data);
@@ -108,7 +111,7 @@ int collision(unsigned long int nn_id, hash_table_t *ht,
 
 	if (new_node == NULL)
 		return (0);
-	new_node.next = ht->array[nn_id];
+	new_node->next = ht->array[nn_id];
 	ht->array[nn_id] = new_node;
 	return (1);
 }

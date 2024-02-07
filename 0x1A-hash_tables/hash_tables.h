@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -38,6 +39,7 @@ hash_table_t *hash_table_create(unsigned long int size);
 
 /* 1-djb2.c" */
 unsigned long int hash_djb2(const unsigned char *str);
+int store_node(hash_table_t *ht, hash_node_t *n_n, unsigned long int n_n_id);
 
 /* 2-key_index.c */
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
@@ -45,11 +47,10 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
 /* 3-hash_table_set.c */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 hash_node_t *create_hash_node(const char *key, const char *value);
-void safe_free(char *data);
-int update_value(const char *k, const char *v, hash_table_t *ht, unsigned long int i);
-int collision(unsigned long int nn_id, hash_table_t *ht, const char *k, const char *v);
-
-/* store_node.c */
-int store_node(hash_table_t *ht, hash_node_t *n_n, unsigned long int n_n_id);
+void safe_free(hash_node_t *data);
+int update_value(const char *k, const char *v,
+				 hash_table_t *ht, unsigned long int i);
+int collision(unsigned long int nn_id, hash_table_t *ht,
+			  const char *k, const char *v);
 
 #endif
