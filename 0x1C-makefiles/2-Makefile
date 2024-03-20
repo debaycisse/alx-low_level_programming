@@ -2,3 +2,14 @@ CC := gcc
 SRC := $(wildcard *.c)
 OBJ := $(wildcard *.o)
 NAME := school
+
+all: school.o main.o sch_exec
+
+school.o: school.c
+	${CC} -c -o $@ $<
+
+main.o: main.c
+	${CC} -c -o $@ $<
+
+sch_exec: school.o main.o 
+	${CC} $< main.o -o $(NAME)
