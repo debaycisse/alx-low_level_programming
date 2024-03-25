@@ -1,7 +1,5 @@
 CC := gcc
 SRC := main.c school.c
 
-all: build
-
-build: $(SRC)
+all: $(SRC)
 	$(CC) $^ -o school
