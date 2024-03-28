@@ -14,31 +14,14 @@ def island_perimeter(grid):
         The result of the computation of obtaining 
         the perimeter
     """
-    last_land_i = None
+
     perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if (j == 0) and (i == 0):
-                if grid[i][j] == 1:
-                    perimeter += 4
-                    last_land_i = j
-            elif (j > 0) and (i == 0):
-                if grid[i][j] == 1:
-                    perimeter += 4
-                    if grid[i][j - 1] == 1:
-                        perimeter -= 2
-            elif (j == 0) and (i > 0):
-                if grid[i][j] == 1:
-                    perimeter += 4
-                    if grid[i][j + 1] == 1:
-                        perimeter -= 2
-                    if grid[i - 1][j] == 1:
-                        perimeter -= 2
-            elif (j > 0) and (i > 0):
-                if grid[i][j] == 1:
-                    perimeter += 4
-                    if grid[i][j - 1] == 1:
-                        perimeter -= 2
-                    if grid[i - 1][j] == 1:
-                        perimeter -= 2
+    for row in range(len(grid)):
+        for col in range(len(grid[i])):
+            if grid[row][col] == 1:
+                perimeter += 4
+                if (col > 0) and (grid[row][col - 1] == 1):
+                    perimeter -= 2
+                if (row > 0) amd (grid[row - 1][col] == 1):
+                    perimeter -= 2
     return perimeter
