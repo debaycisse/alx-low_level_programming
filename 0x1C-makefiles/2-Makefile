@@ -1,7 +1,7 @@
-CC := gcc
-SRC := $(wildcard *.c)
-OBJ := $(wildcard *.o)
-NAME := school
+CC = gcc
+SRC = school.c main.c
+OBJ = school.o main.o
+NAME = school
 
 all: school.o main.o sch_exec
 
