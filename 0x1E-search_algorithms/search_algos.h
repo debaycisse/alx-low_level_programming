@@ -17,4 +17,9 @@ int jump_search(int *array, size_t size, int value);
 /* 102-interpolation.c */
 int interpolation_search(int *array, size_t size, int value);
 
+/* 103-exponential.c */
+int exponential_search(int *array, size_t size, int value);
+size_t get_jump(int *array, size_t size, int value);
+size_t get_prev_jump(int *array, size_t size, int value);
+
 #endif
